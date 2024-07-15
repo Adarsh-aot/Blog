@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import BASE_URL from '../Constant/Base_Url';
 
 function EditBlog() {
   const [title, setTitle] = useState('');
@@ -11,7 +12,7 @@ function EditBlog() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/Blog/${id}`);
+        const response = await axios.get(`${BASE_URL}/Blog/${id}`);
         setTitle(response.data.title);
         setContent(response.data.content);
       } catch (error) {
@@ -25,7 +26,7 @@ function EditBlog() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/Blog/${id}`, { title, content }, {
+      await axios.put(`${BASE_URL}/Blog/${id}`, { title, content }, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `${localStorage.getItem('token')}`,

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import CardBlog from './CardBlog';
 import axios from 'axios';
+import BASE_URL from '../Constant/Base_Url';
 
 function BlogDetail() {
   const [data, setData] = useState(null);
@@ -10,7 +11,7 @@ function BlogDetail() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/Blog/${id}`)
+    axios.get(`${BASE_URL}/Blog/${id}`)
       .then(response => {
         setData(response.data);
         setLoading(false);

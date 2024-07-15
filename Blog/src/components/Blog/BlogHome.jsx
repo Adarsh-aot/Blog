@@ -3,11 +3,12 @@ import Card from './CardBlog'
 import axios from 'axios'
 import FormComponent from './FormComponent'
 import { Link } from 'react-router-dom'
+import BASE_URL from '../Constant/Base_Url'
 
 function BlogHome() {
     const [data , setData] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:3000/Blog')
+        axios.get(`${BASE_URL}/Blog`)
         .then(res => setData(res.data))
         .catch(err => console.log(err))
     })

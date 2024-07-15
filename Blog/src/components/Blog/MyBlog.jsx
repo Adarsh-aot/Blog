@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Card from './CardBlog'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import BASE_URL from '../Constant/Base_Url'
 
 function MyBlog() {
     const [data, setData] = useState([])
@@ -11,7 +12,7 @@ function MyBlog() {
         const headers = {
             Authorization: `${token}`
         };
-        axios.get('http://localhost:3000/Blog/MyBlog', { headers })
+        axios.get(`${BASE_URL}/Blog/MyBlog`, { headers })
             .then(res => setData(res.data))
             .catch(err => console.log(err))
     }
@@ -25,7 +26,7 @@ function MyBlog() {
         const headers = {
             Authorization: `${token}`
         };
-        axios.delete(`http://localhost:3000/Blog/${id}`, { headers })
+        axios.delete(`${BASE_URL}/Blog/${id}`, { headers })
             .then(res => {
                 console.log(res.data);
                 // Remove the deleted item from the state

@@ -11,7 +11,7 @@ function FormComponent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/Blog', {
+      const response = await axios.post(`${BASE_URL}/Blog`, {
         title,
         content
       },
