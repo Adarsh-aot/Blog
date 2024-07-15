@@ -26,12 +26,12 @@ function BlogHome() {
             </Link>
             <div className="right flex flex-row gap-1">
                 <Link to={'/Blog/MyBlog'}>
-                    <button className="px-4 py-2 bg-amber-500 text-white font-semibold rounded-lg shadow-md hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-75 transition duration-300 ease-in-out">
+                    <button className="px-4 py-2 bg-amber-500 text-white font-semibold rounded-lg shadow-md hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-75 transition duration-300 ease-in-out" >
                         My Blog
                     </button>
                 </Link>
                 <Link to={'/'}>
-                    <button className="px-4 py-2 bg-amber-500 text-white font-semibold rounded-lg shadow-md hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-75 transition duration-300 ease-in-out">
+                    <button className="px-4 py-2 bg-amber-500 text-white font-semibold rounded-lg shadow-md hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-75 transition duration-300 ease-in-out" onClick={() => localStorage.removeItem('token')}>
                         Log Out
                     </button>
                 </Link>
