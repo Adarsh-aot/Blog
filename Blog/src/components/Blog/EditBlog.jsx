@@ -26,7 +26,7 @@ function EditBlog() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`${BASE_URL}/Blog/${id}`, { title, content }, {
+      await axios.put(`${BASE_URL}/Blog/${id}` , { title, content }, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `${localStorage.getItem('token')}`,
